@@ -9,14 +9,14 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Cade o professor ?!</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css'); ?>">
 
 </head>
 
 <body>
 
     <nav class="navbar navbar-light">
-        <a class="navbar-brand titulo-navbar">Cadê o <i>Professor ?</i></Professor></a>
+        <a class="navbar-brand titulo-navbar">Cadê o <i>Professor ?</i></a>
         <form class="form-inline">
             <a class="navbar-text texto-terciario" href="">Sou Professor</a>
         </form>
@@ -25,14 +25,14 @@
     <div class="container">
         <form>
             <div class="row controles">
-                <div class="col">
+                <div class="col-6 col-xs-3 px-0">
                     <input type="text" class="form-control" />
                 </div>
-                <div class="col">
+                <div class="col px-1">
                     
                     <input type="text" class="form-control" />
                 </div>
-                <div class="col">
+                <div class="col px-1">
                     <a class="btn btn-primary btn-block">Buscar</a>
                 </div>
             </div>
