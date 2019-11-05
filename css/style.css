@@ -24,6 +24,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Roboto_Regular";
+  src: url("../font/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .form-control {
   border-radius: 1px;
 }
@@ -85,6 +92,28 @@
 
 #aulas {
   margin-top: 10%;
+}
+
+.icone {
+  color: #1d1d1d;
+}
+
+@media screen and (max-width: 600px) {
+  .blocoIcone {
+    display: none;
+  }
+}
+
+th {
+  font-family: 'Roboto_Regular';
+  font-weight: 100;
+  color: #989898;
+}
+
+td {
+  font-family: 'Roboto_Light_Italic';
+  font-weight: 600;
+  color: #1d1d1d;
 }
 
 .titulo-navbar {

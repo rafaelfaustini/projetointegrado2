@@ -58,3 +58,24 @@
 #aulas{
     margin-top: 10%;
 }
+
+.icone{
+    color: $textoprimario;
+}
+.blocoIcone{
+    @media screen and (max-width: 600px) {
+        display: none;
+    }
+}
+
+th {
+    font-family: 'Roboto_Regular';
+    font-weight: 100;
+    color: $textosecundario;
+}
+
+td {
+    font-family: 'Roboto_Light_Italic';
+    font-weight: 600;
+    color: $textoprimario;
+}

@@ -7,7 +7,9 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap-datepicker3.standalone.min.css');?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap-datepicker3.standalone.min.css');?>">
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Cade o professor ?!</title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css'); ?>">
@@ -31,9 +33,14 @@
                     <input type="text" class="form-control" name="keyword" value="<?php if(isset($keyword)) echo $keyword; ?>"/>
                 </div>
                 <div class="col px-1">
-                <div class="input-group date">
-                <input type="text" class="form-control" id="date" name="date" value="<?php if(isset($date)) echo $date; ?>"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-                </div>
+                <div class="input-group date mb-3">
+
+  <input type="text" class="form-control" id="date" name="date" value="<?php if(isset($date)) echo $date; ?>" aria-label="Username" aria-describedby="basic-addon1">
+  <div class="input-group-append blocoIcone">
+    <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar icone"></i></span>
+  </div>
+</div>
+
 
                 </div>
                 <div class="col px-1">
