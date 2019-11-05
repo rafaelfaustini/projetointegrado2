@@ -20,9 +20,9 @@ class Home extends CI_Controller {
 		$date = $this->input->post('date');
 
 
-		if(isset($keyword, $date)){
+		if(isset($keyword, $date) && !empty($keyword) && !empty($date)){
 		$data['aulas'] = $this->buscar($this->token, $keyword, $date);
-		if($data['aulas'] == null){
+		if($data['aulas'] == null || empty($data['aulas'])){
 			$data = [];
 		}
 		$data['keyword'] = $keyword;
