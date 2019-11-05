@@ -2,7 +2,9 @@
     border-radius: 1px;
 }
 
-.btn-primary {
+.btn-primary{
+
+   
     color: $textoprimario;
     background-color: $corprimaria;
     border-radius: 1px;
@@ -15,12 +17,21 @@
     transition: all 0.3s ease 0s;
 
     &:hover{
+        color: $textoprimario;
         background-color: lighten( $corprimaria, 15% );
         border-color: lighten( $corprimaria, 15% );
         box-shadow: 0px 10px 15px lighten( $corprimaria, 20% );
         transform: translateY(-7px);
     }
+    &:active{
+        color: $textoprimario;
+        background-color: darken( $corprimaria, 15% );
+        border-color: darken( $corprimaria, 15% );
+        box-shadow: 0px 10px 15px lighten( $corprimaria, 20% );
+        transform: translateY(-7px);
+    }
 }
+
 
 .controles{
     margin-top: 5%;
@@ -34,4 +45,8 @@
         }
     }
 
+}
+
+#aulas{
+    margin-top: 10%;
 }

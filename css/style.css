@@ -29,7 +29,7 @@
 }
 
 .btn-primary {
-  color: #707070;
+  color: #1d1d1d;
   background-color: #DC3DE0;
   border-radius: 1px;
   border-color: #DC3DE0;
@@ -42,8 +42,19 @@
 }
 
 .btn-primary:hover {
+  color: #1d1d1d;
   background-color: #e87feb;
   border-color: #e87feb;
+  -webkit-box-shadow: 0px 10px 15px #ec95ee;
+          box-shadow: 0px 10px 15px #ec95ee;
+  -webkit-transform: translateY(-7px);
+          transform: translateY(-7px);
+}
+
+.btn-primary:active {
+  color: #1d1d1d;
+  background-color: #b01db4;
+  border-color: #b01db4;
   -webkit-box-shadow: 0px 10px 15px #ec95ee;
           box-shadow: 0px 10px 15px #ec95ee;
   -webkit-transform: translateY(-7px);
@@ -62,9 +73,13 @@
   }
 }
 
+#aulas {
+  margin-top: 10%;
+}
+
 .titulo-navbar {
   font-family: 'Roboto_Light_Italic';
-  color: #707070 !important;
+  color: #1d1d1d !important;
 }
 
 .titulo-navbar i {
