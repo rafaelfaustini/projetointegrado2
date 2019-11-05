@@ -24,7 +24,7 @@
     </nav>
 
     <div class="container">
-        <?php echo form_open('home/index'); ?>
+        <?php echo form_open('home/'); ?>
         <form>
             <div class="row controles">
                 <div class="col-6 col-xs-3 px-0">
