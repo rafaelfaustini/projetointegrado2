@@ -51,7 +51,17 @@
           transform: translateY(-7px);
 }
 
-.btn-primary:active {
+.btn-primary:active, .btn-primary:focus, .btn-primary:active:focus {
+  color: #1d1d1d !important;
+  background-color: #b01db4 !important;
+  border-color: #b01db4 !important;
+  -webkit-box-shadow: 0px 10px 15px #9b199e !important;
+          box-shadow: 0px 10px 15px #9b199e !important;
+  -webkit-transform: translateY(-7px);
+          transform: translateY(-7px);
+}
+
+.btn-primary:target {
   color: #1d1d1d;
   background-color: #b01db4;
   border-color: #b01db4;
