@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Cade o professor ?!</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css?version=1.2'); ?>">
 
 </head>
 
