@@ -5,16 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('favicon/apple-touch-icon.png');?>">
-<link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('favicon/favicon-32x32.png');?>">
-<link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('favicon/favicon-16x16.png');?>">
-<link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('favicon/favicon-32x32.png');?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('favicon/favicon-16x16.png');?>">
+    <link rel="manifest" href="/site.webmanifest">
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap-datepicker3.standalone.min.css');?>">
+    <link rel="stylesheet" type="text/css"
+        href="<?php echo base_url('css/bootstrap-datepicker3.standalone.min.css');?>">
 
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
@@ -35,63 +37,72 @@
 
     <div class="container">
         <?php echo form_open(); ?>
-            <div class="row controles">
-                <div class="col-5 col-xs-2 px-0">
-                    <input type="text" class="form-control" name="keyword" id="keyword" value="<?php if(isset($keyword)) echo $keyword; ?>"/>
-                    <i class='fa fa-search fa-2x search-icon' aria-hidden='true'></i>
-                </div>
-                <div class="col col-xl-2 px-1">
-  <input type="text" class="form-control" id="date" name="date" value="<?php if(isset($date)) echo $date; ?>" aria-label="Username" >
-  <i class='fa fa-calendar fa-2x calendar-icon d-none d-sm-block' aria-hidden='true'></i>
-</div>
-
-                <div class="col col-xl-2 px-1">
-                    <button type="submit" class="btn btn-primary btn-block" id="search">Buscar</a>
-                </div>
+        <div class="row controles">
+            <div class="col-5 col-xs-2 px-0">
+                <input type="text" class="form-control" name="keyword" id="keyword"
+                    value="<?php if(isset($keyword)) echo $keyword; ?>" />
+                <i class='fa fa-search fa-2x search-icon' aria-hidden='true'></i>
             </div>
-            <?php echo form_close() ?>
-        
+            <div class="col col-xl-2 px-1">
+                <input type="text" class="form-control" id="date" name="date"
+                    value="<?php if(isset($date)) echo $date; ?>" aria-label="Username">
+                <i class='fa fa-calendar fa-2x calendar-icon d-none d-sm-block' aria-hidden='true'></i>
+            </div>
 
-                <?php
+            <div class="col col-xl-2 px-1">
+                <button type="submit" class="btn btn-primary btn-block" id="search">Buscar</a>
+            </div>
+        </div>
+        <?php echo form_close() ?>
+
+
+        <?php
 
         if (isset($aulas)){
-            $header = 
-            "<div class='table-responsive-md'>
-            <table class='table table-hover' id='aulas'>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Disciplina</th>
-                        <th>Horário Início</th>
-                        <th>Horário Fim</th>
-                        <th>Sala</th>
-                    </tr>
-                </thead>
-                <tbody>";
-                echo $header;
-            foreach ($aulas as $aula) {
+            $colunasExtra="";
 
+            if(isset($aulas["Dia Semana"])){
+                $colunasExtra.="<th>Dia Semana</th>";
+            }
+              
+                echo "<div class='table-responsive-md'>
+                <table class='table table-hover' id='aulas'>
+                    <thead>
+                        <tr>
+                        ";
+
+                foreach ($aulas[0] as $coluna => $valor){
+                    if($coluna == "id"){
+                        continue;
+                    }
+                    echo "<th>$coluna</th>";
+                }
+
+                echo       
+                "</tr>
+            </thead>
+            <tbody>";
+            foreach ($aulas as $aula) {
                 
-                echo "
-                    <tr>
-                        <td>".$aula["Professor"]."</td>
-                        <td>".$aula["Disciplina"]."</td>
-                        <td>".$aula["Inicio"]."</td>
-                        <td>".$aula["Fim"]."</td>
-                        <td>".$aula["Sala"]."</td>
-                    </tr>";
-                  
+                echo("<tr>");
+                foreach ($aula as $coluna => $valor){
+                    if($coluna == "id"){
+                        continue;
+                    }
+                echo "<td>".$aula[$coluna]."</td>";
+                }   
+                echo("</tr>"); 
             }
         }
             ?>
-                </tbody>
-            </table>
-
-        </div>
-        </div>
+        </tbody>
+        </table>
 
     </div>
-    
+    </div>
+
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -103,31 +114,31 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
-<script src="<?php echo base_url('js/bootstrap-datepicker.min.js'); ?>"></script>
-<script src="<?php echo base_url('js/bootstrap-datepicker.pt-BR.min.js'); ?>"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url('js/bootstrap-datepicker.min.js'); ?>"></script>
+    <script src="<?php echo base_url('js/bootstrap-datepicker.pt-BR.min.js'); ?>"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
-<script>
-$('#date').datepicker({
-    startDate: "-7d",
-    maxViewMode: 1,
-    todayBtn: true,
-    language: "pt-BR",
-    autoclose: true,
-    todayHighlight: true
-});
+    <script>
+    $('#date').datepicker({
+        startDate: "-7d",
+        maxViewMode: 1,
+        todayBtn: true,
+        language: "pt-BR",
+        autoclose: true,
+        todayHighlight: true
+    });
     </script>
 
     <script>
-$(document).ready(function() {
-    $('#aulas').DataTable({
-        "bFilter": false,
-        "info":     false,
-        "paging": false
+    $(document).ready(function() {
+        $('#aulas').DataTable({
+            "bFilter": false,
+            "info": false,
+            "paging": false
+        });
     });
-} );
     </script>
-    
+
 </body>
 
 </html>

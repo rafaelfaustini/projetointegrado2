@@ -33,17 +33,17 @@ class Home extends CI_Controller {
 		$this->load->view('index/index.php', $data);
 	}
 
-	private function buscar($token, $keyword,$data){
+	private function buscar($token, $keyword,$date){
 		try{
 			$token = urlencode($token);
 			$keyword=urlencode($keyword);
-			$data = urlencode($data);
+			$date = urlencode($date);
 			$parameter = "";
 			if(isset($keyword) && !empty($keyword)){
 				$parameter.="&keyword=$keyword";
 			}
-			if(isset($data) && !empty($data)){
-				$parameter.="&keyword=$data";
+			if(isset($date) && !empty($date)){
+				$parameter.="&date=$date";
 			}
 		$aulas = json_decode(
 			file_get_contents("https://cadeprofessor-api.herokuapp.com/index.php/aula/busca?token=$token$parameter"), true);
