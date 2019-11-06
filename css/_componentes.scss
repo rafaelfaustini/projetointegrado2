@@ -1,7 +1,55 @@
+
+
 .form-control {
-    border-radius: 1px;
+    border-radius: 7px;
+    &:focus{
+        border-color: $textoterciario !important;
+        box-shadow: 0 0 0 0.2rem rgba($textoterciario, 0.2) !important;
+   
+    }
+
+}
+#keyword{
+    border-radius: 20px;
+    padding-right:60px !important;
+
+    &:focus{
+        & + .search-icon{
+            transition: all 0.5s ease 0.1s;
+            color: $textoterciario;
+        }
+
+    }
+
 }
 
+#date{
+    &:focus{
+        & + .calendar-icon{
+            transition: all 0.5s ease 0.1s;
+            color: $textoterciario;
+        }
+    }
+}
+.search-icon{
+right:20px;
+position:absolute;
+top:10px;
+font-size: 1em;
+color: $textosecundario;
+
+
+
+}
+.calendar-icon{
+    right:20px;
+    position:absolute;
+    top:9px;
+    font-size: 1em;
+    color: $textosecundario;
+    
+    
+    }
 .btn-primary{
 
    

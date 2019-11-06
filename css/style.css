@@ -32,7 +32,46 @@
 }
 
 .form-control {
-  border-radius: 1px;
+  border-radius: 7px;
+}
+
+.form-control:focus {
+  border-color: #DC3DE0 !important;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(220, 61, 224, 0.2) !important;
+          box-shadow: 0 0 0 0.2rem rgba(220, 61, 224, 0.2) !important;
+}
+
+#keyword {
+  border-radius: 20px;
+  padding-right: 60px !important;
+}
+
+#keyword:focus + .search-icon {
+  -webkit-transition: all 0.5s ease 0.1s;
+  transition: all 0.5s ease 0.1s;
+  color: #DC3DE0;
+}
+
+#date:focus + .calendar-icon {
+  -webkit-transition: all 0.5s ease 0.1s;
+  transition: all 0.5s ease 0.1s;
+  color: #DC3DE0;
+}
+
+.search-icon {
+  right: 20px;
+  position: absolute;
+  top: 10px;
+  font-size: 1em;
+  color: #989898;
+}
+
+.calendar-icon {
+  right: 20px;
+  position: absolute;
+  top: 9px;
+  font-size: 1em;
+  color: #989898;
 }
 
 .btn-primary {

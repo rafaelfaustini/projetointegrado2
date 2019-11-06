@@ -29,28 +29,23 @@
         <?php echo form_open('home/'); ?>
         <form>
             <div class="row controles">
-                <div class="col-6 col-xs-3 px-0">
-                    <input type="text" class="form-control" name="keyword" value="<?php if(isset($keyword)) echo $keyword; ?>"/>
+                <div class="col-5 col-xs-2 px-0">
+                    <input type="text" class="form-control" name="keyword" id="keyword" value="<?php if(isset($keyword)) echo $keyword; ?>"/>
+                    <i class='fa fa-search fa-2x search-icon' aria-hidden='true'></i>
                 </div>
-                <div class="col px-1">
-                <div class="input-group date mb-3">
-
-  <input type="text" class="form-control" id="date" name="date" value="<?php if(isset($date)) echo $date; ?>" aria-label="Username" aria-describedby="basic-addon1">
-  <div class="input-group-append blocoIcone">
-    <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar icone"></i></span>
-  </div>
+                <div class="col col-xl-2 px-1">
+  <input type="text" class="form-control" id="date" name="date" value="<?php if(isset($date)) echo $date; ?>" aria-label="Username" >
+  <i class='fa fa-calendar fa-2x calendar-icon' aria-hidden='true'></i>
 </div>
 
-
-                </div>
-                <div class="col px-1">
+                <div class="col col-xl-2 px-1">
                     <button type="submit" class="btn btn-primary btn-block" id="search">Buscar</a>
                 </div>
             </div>
             <?php echo form_close() ?>
 
-  
-            <table class="table table-striped" id="aulas">
+            <div class="table-responsive-md">
+            <table class="table" id="aulas">
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -81,6 +76,7 @@
                 </tbody>
             </table>
 
+        </div>
         </div>
 
     </div>
