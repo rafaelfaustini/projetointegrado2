@@ -16,14 +16,17 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$data=array();
+
 		$keyword = $this->input->post('keyword');
 		$date = $this->input->post('date');
 
-
+		if(!empty($_POST)){
 		$data['aulas'] = $this->buscar($this->token, $keyword, $date);
+
 		if($data['aulas'] == null || empty($data['aulas'])){
 			$data = [];
 		}
+	}
 		$data['keyword'] = $keyword;
 		$data['date'] = $date;
 		
@@ -36,10 +39,10 @@ class Home extends CI_Controller {
 			$keyword=urlencode($keyword);
 			$data = urlencode($data);
 			$parameter = "";
-			if(isset($keyword)){
+			if(isset($keyword) && !empty($keyword)){
 				$parameter.="&keyword=$keyword";
 			}
-			if(isset($data)){
+			if(isset($data) && !empty($data)){
 				$parameter.="&keyword=$data";
 			}
 		$aulas = json_decode(
