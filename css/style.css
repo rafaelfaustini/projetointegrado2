@@ -31,14 +31,88 @@
   font-style: normal;
 }
 
+.controles {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation: fadein 1s;
+          animation: fadein 1s;
+}
+
+#aulas {
+  -webkit-animation: fadein 3s;
+          animation: fadein 3s;
+}
+
+.professor {
+  padding: .5em .8em;
+  color: #DC3DE0;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
+  position: relative;
+  text-decoration: none !important;
+  font-size: 20px;
+}
+
+.professor::before, .professor::after {
+  content: '';
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
+  opacity: 0;
+}
+
+.professor::before {
+  content: '';
+  right: 0;
+  top: 0;
+  border-top: 3px solid #DC3DE0;
+  border-right: 3px solid #da34df;
+  -webkit-transform: translate(-100%, 50%);
+          transform: translate(-100%, 50%);
+}
+
+.professor:after {
+  content: '';
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid #DC3DE0;
+  border-left: 3px solid #da34df;
+  -webkit-transform: translate(100%, -100%);
+          transform: translate(100%, -100%);
+}
+
+.professor:hover:before, .professor:hover:after {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
+}
+
+.professor:hover {
+  color: #DC3DE0;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
+}
+
 .form-control {
   border-radius: 7px;
+  -webkit-transition: all 1.5s ease 0.1s;
+  transition: all 1.5s ease 0.1s;
 }
 
 .form-control:focus {
+  -webkit-transition: all 1.5s ease 0.1s;
+  transition: all 1.5s ease 0.1s;
   border-color: #DC3DE0 !important;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(220, 61, 224, 0.2) !important;
           box-shadow: 0 0 0 0.2rem rgba(220, 61, 224, 0.2) !important;
+}
+
+.search-icon {
+  -webkit-transition: all 1.5s ease 0.1s;
+  transition: all 1.5s ease 0.1s;
 }
 
 #keyword {
@@ -47,14 +121,19 @@
 }
 
 #keyword:focus + .search-icon {
-  -webkit-transition: all 0.5s ease 0.1s;
-  transition: all 0.5s ease 0.1s;
+  -webkit-transition: all 1.5s ease 0.1s;
+  transition: all 1.5s ease 0.1s;
   color: #DC3DE0;
 }
 
+.calendar-icon {
+  -webkit-transition: all 1.5s ease 0.1s;
+  transition: all 1.5s ease 0.1s;
+}
+
 #date:focus + .calendar-icon {
-  -webkit-transition: all 0.5s ease 0.1s;
-  transition: all 0.5s ease 0.1s;
+  -webkit-transition: all 1.5s ease 0.1s;
+  transition: all 1.5s ease 0.1s;
   color: #DC3DE0;
 }
 
@@ -118,7 +197,7 @@
 }
 
 .controles {
-  margin-top: 5%;
+  margin-top: 4%;
   margin-left: 0;
   margin-right: 0;
 }
@@ -162,5 +241,23 @@ td {
 
 .titulo-navbar i {
   font-family: 'Roboto_Black_Italic';
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=style.css.map */

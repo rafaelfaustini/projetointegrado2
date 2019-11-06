@@ -1,13 +1,78 @@
+.controles{
+    justify-content:center;
+    animation: fadein 1s;
+}
+
+#aulas{
+    animation: fadein 3s;
+}
 
 
+.professor {
+    padding: .5em .8em;
+    color: $corprimaria;
+    transition: all .35s ease;
+    position: relative;
+    text-decoration: none !important;
+    font-size: 20px;
+  
+  &::before,
+  &::after {
+    content: '';
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    transition: all .35s ease;
+    opacity: 0;
+  }
+
+  
+  &::before {
+    content: '';
+    right: 0;
+    top: 0;
+    border-top: 3px solid $textoterciario;
+    border-right: 3px solid darken($textoterciario, 2%);
+    transform: translate(-100%, 50%);
+    
+  }
+  
+  &:after {
+    content: '';
+    left: 0;
+    bottom: 0;
+    border-bottom: 3px solid $textoterciario;
+    border-left: 3px solid darken($textoterciario, 2%);
+    transform: translate(100%, -100%)
+  }
+  
+  &:hover:before,
+  &:hover:after{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  
+  &:hover {
+    color: $textoterciario;
+    transition: all .35s ease;
+
+  }
+
+}
 .form-control {
     border-radius: 7px;
     &:focus{
+        transition: all 1.5s ease 0.1s;
         border-color: $textoterciario !important;
         box-shadow: 0 0 0 0.2rem rgba($textoterciario, 0.2) !important;
    
     }
+    transition: all 1.5s ease 0.1s;
 
+
+}
+.search-icon{
+    transition: all 1.5s ease 0.1s;
 }
 #keyword{
     border-radius: 20px;
@@ -15,7 +80,7 @@
 
     &:focus{
         & + .search-icon{
-            transition: all 0.5s ease 0.1s;
+            transition: all 1.5s ease 0.1s;
             color: $textoterciario;
         }
 
@@ -23,10 +88,14 @@
 
 }
 
+
+.calendar-icon{
+    transition: all 1.5s ease 0.1s;
+}
 #date{
     &:focus{
         & + .calendar-icon{
-            transition: all 0.5s ease 0.1s;
+            transition: all 1.5s ease 0.1s;
             color: $textoterciario;
         }
     }
@@ -90,7 +159,7 @@ color: $textosecundario;
 
 
 .controles{
-    margin-top: 5%;
+    margin-top: 4%;
 
     margin-left: 0;
     margin-right: 0;

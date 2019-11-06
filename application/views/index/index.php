@@ -4,6 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('favicon/apple-touch-icon.png');?>">
+<link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('favicon/favicon-32x32.png');?>">
+<link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('favicon/favicon-16x16.png');?>">
+<link rel="manifest" href="/site.webmanifest">
+
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,7 +26,7 @@
     <nav class="navbar navbar-light">
         <a class="navbar-brand titulo-navbar">Cadê o <i>Professor ?</i></a>
         <form class="form-inline">
-            <a class="navbar-text texto-terciario" href="">Sou Professor</a>
+            <a class="navbar-text professor" href="">Sou Professor</a>
         </form>
     </nav>
 
@@ -35,7 +40,7 @@
                 </div>
                 <div class="col col-xl-2 px-1">
   <input type="text" class="form-control" id="date" name="date" value="<?php if(isset($date)) echo $date; ?>" aria-label="Username" >
-  <i class='fa fa-calendar fa-2x calendar-icon' aria-hidden='true'></i>
+  <i class='fa fa-calendar fa-2x calendar-icon d-none d-sm-block' aria-hidden='true'></i>
 </div>
 
                 <div class="col col-xl-2 px-1">
@@ -43,9 +48,14 @@
                 </div>
             </div>
             <?php echo form_close() ?>
+        
 
-            <div class="table-responsive-md">
-            <table class="table" id="aulas">
+                <?php
+
+        if (isset($aulas)){
+            $header = 
+            "<div class='table-responsive-md'>
+            <table class='table' id='aulas'>
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -55,9 +65,8 @@
                         <th>Sala</th>
                     </tr>
                 </thead>
-                <tbody>
-                <?php
-        if (isset($aulas)){
+                <tbody>";
+                echo $header;
             foreach ($aulas as $aula) {
 
                 
