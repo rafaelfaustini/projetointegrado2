@@ -20,14 +20,12 @@ class Home extends CI_Controller {
 		$date = $this->input->post('date');
 
 
-		if(isset($keyword, $date) && !empty($keyword) && !empty($date)){
 		$data['aulas'] = $this->buscar($this->token, $keyword, $date);
 		if($data['aulas'] == null || empty($data['aulas'])){
 			$data = [];
 		}
 		$data['keyword'] = $keyword;
 		$data['date'] = $date;
-		}
 		
 		$this->load->view('index/index.php', $data);
 	}
@@ -37,8 +35,15 @@ class Home extends CI_Controller {
 			$token = urlencode($token);
 			$keyword=urlencode($keyword);
 			$data = urlencode($data);
+			$parameter = "";
+			if(isset($keyword)){
+				$parameter.="&keyword=$keyword";
+			}
+			if(isset($data)){
+				$parameter.="&keyword=$data";
+			}
 		$aulas = json_decode(
-			file_get_contents("https://cadeprofessor-api.herokuapp.com/index.php/aula/busca?token=$token&keyword=$keyword&data=$data"), true);
+			file_get_contents("https://cadeprofessor-api.herokuapp.com/index.php/aula/busca?token=$token$parameter"), true);
 		return $aulas;
 
 		} catch (Exception $e) {
