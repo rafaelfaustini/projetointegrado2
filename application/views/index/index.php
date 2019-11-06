@@ -16,7 +16,10 @@
 
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Cade o professor ?!</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
+    <title>Cadê o professor ?!</title>
+
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css?version=1.2'); ?>">
 
 </head>
@@ -31,8 +34,7 @@
     </nav>
 
     <div class="container">
-        <?php echo form_open('home/'); ?>
-        <form>
+        <?php echo form_open(); ?>
             <div class="row controles">
                 <div class="col-5 col-xs-2 px-0">
                     <input type="text" class="form-control" name="keyword" id="keyword" value="<?php if(isset($keyword)) echo $keyword; ?>"/>
@@ -55,7 +57,7 @@
         if (isset($aulas)){
             $header = 
             "<div class='table-responsive-md'>
-            <table class='table' id='aulas'>
+            <table class='table table-hover' id='aulas'>
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -103,7 +105,7 @@
 
 <script src="<?php echo base_url('js/bootstrap-datepicker.min.js'); ?>"></script>
 <script src="<?php echo base_url('js/bootstrap-datepicker.pt-BR.min.js'); ?>"></script>
-
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
 <script>
 $('#date').datepicker({
@@ -115,6 +117,17 @@ $('#date').datepicker({
     todayHighlight: true
 });
     </script>
+
+    <script>
+$(document).ready(function() {
+    $('#aulas').DataTable({
+        "bFilter": false,
+        "info":     false,
+        "paging": false
+    });
+} );
+    </script>
+    
 </body>
 
 </html>
