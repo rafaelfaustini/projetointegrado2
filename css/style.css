@@ -243,6 +243,10 @@ td {
   font-family: 'Roboto_Black_Italic';
 }
 
+.back-btn {
+  color: #DC3DE0 !important;
+}
+
 @-webkit-keyframes fadein {
   from {
     opacity: 0;

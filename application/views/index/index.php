@@ -22,7 +22,7 @@
 
     <title>Cadê o professor ?!</title>
 
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css?version=1.2'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css?version=1.3'); ?>">
 
 </head>
 
@@ -31,7 +31,7 @@
     <nav class="navbar navbar-light">
         <a class="navbar-brand titulo-navbar">Cadê o <i>Professor ?</i></a>
         <form class="form-inline">
-            <a class="navbar-text professor" href="">Sou Professor</a>
+            <?php echo anchor('Painel', 'Sou professor', 'class="navbar-text professor"') ?>
         </form>
     </nav>
 
@@ -59,11 +59,6 @@
         <?php
 
         if (isset($aulas)){
-            $colunasExtra="";
-
-            if(isset($aulas["Dia Semana"])){
-                $colunasExtra.="<th>Dia Semana</th>";
-            }
               
                 echo "<div class='table-responsive-md'>
                 <table class='table table-hover' id='aulas'>
